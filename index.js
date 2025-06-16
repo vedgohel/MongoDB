@@ -19,8 +19,65 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User",userSchema);
 
+User.updateOne({name:"vandan"},{age: 25}).then((res)=>{    
+    console.log(res)
+}) .catch((err) =>{
+    console.log(err);
+});
 
 
+/*
+
+/ calling id retrieve data of user
+User.findById("685055692fd48aba61c125b1")
+ .then((res) =>{
+     console.log(res);
+    })
+    .catch((err)=>{
+     console.log(err);
+    });
+
+
+//specific name is print
+User.find({ age: { $gt : 25 }})
+ .then((res) =>{
+     console.log(res[0].name);
+    })
+    .catch((err)=>{
+     console.log(err);
+    });
+
+
+//which are user of age greter then 25 ?
+User.find({ age: { $gt : 25 }})
+ .then((res) =>{
+     console.log(res);
+    })
+    .catch((err)=>{
+     console.log(err);
+    });
+
+
+//find all user data
+User.find({}).then((res) =>{
+     console.log(res);
+    })
+    .catch((err)=>{
+     console.log(err);
+    });
+
+//insertMany
+ 
+User.insertMany([
+    {name:"vandan", email: "vandan@gmail.com", age:24},
+    {name:"kashish", email: "kashish@gmail.com", age:26},
+    {name:"vijay", email: "vijay@gmail.com", age:40},
+]).then((res) =>{
+    console.log(res);
+});
+
+
+//insertOne
 const user1 = new User ({ 
     name: "radhi",
     email:"radhi@gmail.com",
@@ -33,3 +90,4 @@ const user1 = new User ({
   .catch( (err) =>{ 
     console.log(err); 
   });
+  */
